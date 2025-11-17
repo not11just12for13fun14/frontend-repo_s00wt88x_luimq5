@@ -10,22 +10,27 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Spline scene="https://prod.spline.design/VyGeZv58yuk8j7Yy/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/70 to-white pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background:
+          'radial-gradient(600px 300px at 10% 10%, rgba(215,183,95,0.18), transparent 60%),' +
+          'radial-gradient(800px 400px at 90% 0%, rgba(101,126,146,0.25), transparent 60%),' +
+          'linear-gradient(160deg, rgba(1,8,53,0.85) 0%, rgba(47,45,55,0.85) 60%)'
+      }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 items-center py-16 lg:py-24">
           <div>
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight aj-ivory">
               {t('brand')}
             </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.6 }} className="mt-4 text-lg sm:text-xl text-slate-700 max-w-2xl">
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.6 }} className="mt-4 text-lg sm:text-xl aj-soft max-w-2xl">
               {t('slogan')}
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="mt-8 flex flex-wrap gap-3">
-              <a href="#services" className="px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition shadow-lg shadow-slate-900/10">
+              <a href="#services" className="px-5 py-3 rounded-xl aj-btn-primary shadow-lg shadow-[rgba(215,183,95,0.25)]">
                 {t('cta_services')}
               </a>
-              <a href="#academy" className="px-5 py-3 rounded-xl bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 transition">
+              <a href="#academy" className="px-5 py-3 rounded-xl aj-btn-outline">
                 {t('cta_academy')}
               </a>
             </motion.div>
@@ -40,6 +45,9 @@ export default function Hero() {
           <div className="hidden lg:block" />
         </div>
       </div>
+
+      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full pointer-events-none" style={{
+        background: 'radial-gradient(closest-side, rgba(215,183,95,0.12), transparent)' }} />
     </section>
   )
 }
@@ -47,9 +55,9 @@ export default function Hero() {
 function Stat({ number, labelKey }) {
   const { t } = useLang()
   return (
-    <div className="p-4 rounded-xl bg-white/70 backdrop-blur border border-slate-200">
-      <div className="text-2xl font-semibold text-slate-900">{number}</div>
-      <div className="text-slate-600 text-sm">{t(labelKey)}</div>
+    <div className="p-4 rounded-xl aj-card aj-border">
+      <div className="text-2xl font-semibold aj-ivory">{number}</div>
+      <div className="aj-soft text-sm">{t(labelKey)}</div>
     </div>
   )
 }

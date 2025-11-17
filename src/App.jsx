@@ -7,7 +7,7 @@ import { LanguageProvider } from './context/LanguageContext'
 function App() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-white text-slate-900">
+      <div className="min-h-screen aj-bg-gradient text-[color:var(--aj-ivory)]">
         <Navbar />
         <Hero />
         <Sections />
